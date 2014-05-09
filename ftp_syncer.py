@@ -88,7 +88,7 @@ def ftp_syncer(src_object, destination_object, ftp_command, is_directory):
 
 def sync_with_server(destination_object, ftp_command, is_directory):
   try:
-		ftp_syncer(local_path + destination_object, destination_object, ftp_command, is_directory)
+    ftp_syncer(local_path + destination_object, destination_object, ftp_command, is_directory)
   except:
     print destination_object + ' unable to be synced with remote server.'
   else:
@@ -96,26 +96,26 @@ def sync_with_server(destination_object, ftp_command, is_directory):
 
 
 def initiate_sync(object_from_event, ftp_event, is_directory):
-	src_object = object_from_event.split(local_path)
+  src_object = object_from_event.split(local_path)
 
-	if(len(src_object) > 1):
-		sync_with_server(src_object[1], ftp_event, is_directory)
-	else:
-		'File index out of range.'
+  if(len(src_object) > 1):
+    sync_with_server(src_object[1], ftp_event, is_directory)
+  else:
+    return 'File index out of range.'
 
 
 class CustomEventHandler(FileSystemEventHandler):
-	def on_modified(self, event):
-		initiate_sync(event.src_path, 'STOR ', event.is_directory)
-		super(CustomEventHandler, self).on_modified(self)
+  def on_modified(self, event):
+    initiate_sync(event.src_path, 'STOR ', event.is_directory)
+    super(CustomEventHandler, self).on_modified(self)
 
-	def on_created(self, event):
-		initiate_sync(event.src_path, 'STOR ', event.is_directory)
-		super(CustomEventHandler, self).on_modified(self)
+  def on_created(self, event):
+    initiate_sync(event.src_path, 'STOR ', event.is_directory)
+    super(CustomEventHandler, self).on_modified(self)
 
-	def on_deleted(self, event):
-		initiate_sync(event.src_path, 'DELE ', event.is_directory)
-		super(CustomEventHandler, self).on_deleted(self)
+  def on_deleted(self, event):
+    initiate_sync(event.src_path, 'DELE ', event.is_directory)
+    super(CustomEventHandler, self).on_deleted(self)
 
 
 event_handler = CustomEventHandler()
