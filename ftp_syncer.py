@@ -101,7 +101,7 @@ def initiate_sync(object_from_event, ftp_event, is_directory):
   if(len(src_object) > 1):
     sync_with_server(src_object[1], ftp_event, is_directory)
   else:
-    return 'File index out of range.'
+    return False
 
 
 class CustomEventHandler(FileSystemEventHandler):
