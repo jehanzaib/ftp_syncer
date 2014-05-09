@@ -31,6 +31,6 @@ python syncer.py --help
 
 ## Notes ##
 
-Contact me at [@_jehanzaib_][mjb] or <mjb@iknowl.net> for any feedback/suggestions.
+Contact me at [@\_jehanzaib\_][mjb] or <mjb@iknowl.net> for any feedback/suggestions.
 
 [mjb]:   https://twitter.com/_jehanzaib_
