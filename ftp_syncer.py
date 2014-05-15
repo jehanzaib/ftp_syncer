@@ -37,15 +37,9 @@ from ftplib import FTP, error_reply, error_perm
 
 
 argparse = OptionParser()
-argparse.add_option("-c", "--config", dest="config",
-                                        help = "Required. When set, it gets FTP credentials from given config file.",
-                                        metavar="FILE")
-argparse.add_option("-s", "--serverpath", dest="serverpath",
-																				help = "Required. When set, the given remote directory is kept in sync with local directory.",
-																				metavar="PATH")
-argparse.add_option("-l", "--localpath", dest="localpath",
-																				help = "Required. When set, the given local directory is kept in sync with remote directory.",
-																				metavar="PATH")
+argparse.add_option("-c", "--config", dest="config", help = "Required. When set, it gets FTP credentials from given config file.", metavar="FILE")
+argparse.add_option("-s", "--serverpath", dest="serverpath", help = "Required. When set, the given remote directory is kept in sync with local directory.", metavar="PATH")
+argparse.add_option("-l", "--localpath", dest="localpath", help = "Required. When set, the given local directory is kept in sync with remote directory.", metavar="PATH")
 args = argparse.parse_args()
 
 if len(args) != 2 or args[0].config == None or args[0].serverpath == None or args[0].localpath == None:
