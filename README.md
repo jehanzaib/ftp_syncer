@@ -18,7 +18,7 @@ You should never use it in production environment. ftp_syncer should only be use
 2. Save your FTP credentials in config.yaml
 
 ```
-python ftp_syncer.py -c config.yaml -s YOUR_SERVER_DIR -l YOUR_LOCAL_DIR
+python ftp_syncer.py -c config.yml -s YOUR_SERVER_DIR -l YOUR_LOCAL_DIR
 ```
 
 ## Script Help ##
