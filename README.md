@@ -29,6 +29,10 @@ Execute with --help parameter to get help on all available options.
 python ftp_syncer.py --help
 ```
 
+## License ##
+
+This software is distributed under the terms of the MIT license.
+
 ## Notes ##
 
 Contact me at [@\_jehanzaib\_][mjb] or <mjb@iknowl.net> for any feedback/suggestions.
